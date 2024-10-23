@@ -7,7 +7,6 @@ This project implements a real-time streaming ETL (Extract, Transform, Load) pip
 The primary goal of this project is to demonstrate the design and implementation of a scalable data pipeline capable of processing high-throughput real-time data, with a focus on windowed aggregations and cloud-native architectures.
 
 
-
 ## Reference
 
 https://randomuser.me/ \
