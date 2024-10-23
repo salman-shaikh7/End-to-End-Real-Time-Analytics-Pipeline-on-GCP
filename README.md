@@ -11,7 +11,7 @@ The primary goal of this project is to demonstrate the design and implementation
 ## Reference
 
 https://randomuser.me/ \
-https://beam.apache.org/documentation/
+https://beam.apache.org/documentation/\
 https://chatgpt.com/\
 https://cloud.google.com/docs\
 https://www.cloudskillsboost.google/paths/16\
