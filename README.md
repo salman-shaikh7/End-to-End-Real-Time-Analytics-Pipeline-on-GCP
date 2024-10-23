@@ -6,3 +6,16 @@ This project implements a real-time streaming ETL (Extract, Transform, Load) pip
 
 The primary goal of this project is to demonstrate the design and implementation of a scalable data pipeline capable of processing high-throughput real-time data, with a focus on windowed aggregations and cloud-native architectures.
 
+
+
+## Reference
+
+https://randomuser.me/ \
+https://beam.apache.org/documentation/
+https://chatgpt.com/\
+https://cloud.google.com/docs\
+https://www.cloudskillsboost.google/paths/16\
+https://github.com/GoogleCloudPlatform/training-data-analyst/\
+https://github.com/GoogleCloudPlatform/training-data-analyst/\
+https://www.youtube.com/watch?v=IbZHLDKNwRE&list=PLGZpjgRdXegmkexUk_PN8g_V9FRywAad-
+
