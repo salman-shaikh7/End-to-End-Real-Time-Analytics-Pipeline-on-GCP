@@ -48,9 +48,24 @@ with DAG(
                         task_id='Create_PubSub_Topic',
                         bash_command=
                         """
-                        echo "Creating pub sub topic"
-                        gcloud pubsub topics create my_topic
-                        echo "pub sub topic created"
+                        TOPIC="my-topic"
+                        RESULT=$(\
+                        gcloud pubsub topics list \
+                        --filter="name.scope(topics)=${TOPIC}" \
+                        --format="value(name)" 2>/dev/null)
+
+                        if [ "${RESULT}" == "" ]
+                        then
+                            echo "Topic ${TOPIC} does not exist, creating..."
+                            gcloud pubsub topics create ${TOPIC}
+                            if [ $? -eq 0 ]
+                            then
+                                # Command succeeded, topic created
+                            else
+                                # Command did not succeed, topic was not created
+                            fi
+                        fi
+
                         """
                         )
     
@@ -113,7 +128,7 @@ with DAG(
                         task_id="stop_dataflow_job",
                         location="us-east1",
                         drain_pipeline=True,
-                        job_name_prefix="streaming-minute-traffic-pipeline-", # this name is assigned during execution of dataflow pipeline
+                        job_name_prefix="streaming-per-minute-customer-insights-pipeline-", # this name is assigned during execution of dataflow pipeline
                     )
     
 #Map Dependencies    

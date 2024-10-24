@@ -74,7 +74,8 @@ def run():
     options.view_as(GoogleCloudOptions).region = opts.region
     options.view_as(GoogleCloudOptions).staging_location = opts.staging_location
     options.view_as(GoogleCloudOptions).temp_location = opts.temp_location
-    options.view_as(GoogleCloudOptions).job_name = '{0}{1}'.format('streaming-minute-traffic-pipeline-',time.time_ns())
+    options.view_as(GoogleCloudOptions).job_name = '{0}{1}'.format('streaming-minute-customer-pipeline-',time.time_ns())
+                                            
     options.view_as(StandardOptions).runner = opts.runner
 
     input_topic = opts.input_topic
@@ -125,7 +126,7 @@ def run():
                         schema=agg_table_schema,
                         create_disposition=beam.io.BigQueryDisposition.CREATE_IF_NEEDED,
                         write_disposition=beam.io.BigQueryDisposition.WRITE_APPEND)
-    
+                        
     )
 
 
