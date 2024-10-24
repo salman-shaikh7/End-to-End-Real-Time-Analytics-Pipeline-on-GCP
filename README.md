@@ -1,10 +1,41 @@
 # Real-Time ETL Streaming Pipeline Using Apache Beam and Google Dataflow
 
-## Project Overview
+# End-to-End Real-Time Analytics Pipeline on GCP
 
-This project implements a real-time streaming ETL (Extract, Transform, Load) pipeline using **Apache Beam**, **Google Cloud Dataflow**, **Google Pub/Sub**, and **BigQuery**. The pipeline ingests streaming data from an external API, processes the data in real-time, and stores the aggregated results in BigQuery for further analysis. The ETL process is orchestrated using **Apache Airflow**.
+## Overview
+This project demonstrates how to build an end-to-end real-time data analytics pipeline using Google Cloud Platform (GCP) services. The pipeline ingests streaming data, processes it in real-time, and stores the results for analytics and visualization. It leverages several GCP components such as Pub/Sub, Dataflow, BigQuery, and Looker Studio.
 
-The primary goal of this project is to demonstrate the design and implementation of a scalable data pipeline capable of processing high-throughput real-time data, with a focus on windowed aggregations and cloud-native architectures.
+## Architecture
+The pipeline consists of the following components:
+- **Data Ingestion (Pub/Sub)**: Captures real-time data streams.
+- **Stream Processing (Dataflow)**: Applies real-time transformations and aggregations to the data.
+- **Data Storage (BigQuery)**: Stores processed data for long-term analysis.
+- **Visualization (Looker Studio)**: Provides dashboards and real-time data insights.
+
+## Key Features
+- **Scalable and Reliable**: The pipeline is designed to handle large-scale, continuous data streams efficiently.
+- **Real-Time Processing**: Data is processed and analyzed as it is ingested, providing near real-time insights.
+- **Serverless Architecture**: Most components, such as Pub/Sub and Dataflow, are managed services, reducing operational overhead.
+  
+## Technologies Used
+- **Google Pub/Sub**: Message ingestion and delivery service for real-time data.
+- **Google Dataflow**: Managed stream processing with Apache Beam.
+- **BigQuery**: Serverless, highly scalable data warehouse for analytics.
+- **Tableau**: Visualization tool for creating interactive dashboards.
+- **Python**: Used for pipeline orchestration and Dataflow jobs.
+
+## Setup Instructions
+### Prerequisites
+1. A Google Cloud account.
+2. Enabled GCP services: Pub/Sub, Dataflow, BigQuery, Looker Studio.
+3. Python 3.x installed locally.
+
+### Steps
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/salman-shaikh7/End-to-End-Real-Time-Analytics-Pipeline-on-GCP.git
+   cd End-to-End-Real-Time-Analytics-Pipeline-on-GCP
+
 
 
 ## Reference
