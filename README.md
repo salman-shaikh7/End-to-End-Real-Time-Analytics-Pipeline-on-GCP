@@ -10,7 +10,7 @@ The pipeline consists of the following components:
 - **Data Ingestion (Pub/Sub)**: Captures real-time data streams.
 - **Stream Processing (Dataflow)**: Applies real-time transformations and aggregations to the data.
 - **Data Storage (BigQuery)**: Stores processed data for long-term analysis.
-- **Visualization (Looker Studio)**: Provides dashboards and real-time data insights.
+- **Visualization (Tableau)**: Provides dashboards and real-time data insights.
 
 ## Key Features
 - **Scalable and Reliable**: The pipeline is designed to handle large-scale, continuous data streams efficiently.
