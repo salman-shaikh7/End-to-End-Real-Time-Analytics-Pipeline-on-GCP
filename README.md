@@ -1,7 +1,5 @@
 # Real-Time ETL Streaming Pipeline Using Apache Beam and Google Dataflow
 
-# End-to-End Real-Time Analytics Pipeline on GCP
-
 ## Overview
 This project demonstrates how to build an end-to-end real-time data analytics pipeline using Google Cloud Platform (GCP) services. The pipeline ingests streaming data, processes it in real-time, and stores the results for analytics and visualization. It leverages several GCP components such as Pub/Sub, Dataflow, BigQuery, and Looker Studio.
 
