@@ -22,17 +22,6 @@ The pipeline consists of the following components:
 - **Tableau**: Visualization tool for creating interactive dashboards.
 - **Python**: Used for pipeline orchestration and Dataflow jobs.
 
-## Setup Instructions
-### Prerequisites
-1. A Google Cloud account.
-2. Enabled GCP services: Pub/Sub, Dataflow, BigQuery, Looker Studio.
-3. Python 3.x installed locally.
-
-### Steps
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/salman-shaikh7/End-to-End-Real-Time-Analytics-Pipeline-on-GCP.git
-   cd End-to-End-Real-Time-Analytics-Pipeline-on-GCP
 
 
 
