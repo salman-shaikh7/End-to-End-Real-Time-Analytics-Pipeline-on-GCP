@@ -52,6 +52,7 @@ class Counter(beam.DoFn):
 
 with beam.Pipeline() as p:
 
+    #Generating timestamp 
 
     events = [
         window.TimestampedValue(b'[{"gender": "female", "name": {"title": "Miss", "first": "\\u0622\\u0631\\u0645\\u06cc\\u062a\\u0627", "last": "\\u06cc\\u0627\\u0633\\u0645\\u06cc"}, "location": {"street": {"number": 1044, "name": "\\u062c\\u0645\\u0647\\u0648\\u0631\\u06cc \\u0627\\u0633\\u0644\\u0627\\u0645\\u06cc"}, "city": "\\u0628\\u0648\\u0634\\u0647\\u0631", "state": "\\u0627\\u06cc\\u0644\\u0627\\u0645", "country": "Iran", "postcode": 25457, "coordinates": {"latitude": "16.2200", "longitude": "12.0412"}, "timezone": {"offset": "+1:00", "description": "Brussels, Copenhagen, Madrid, Paris"}}, "email": "armyt.ysmy@example.com", "login": {"uuid": "0f171342-2987-4ca6-8fd4-63e7e6be8a35", "username": "crazygorilla302", "password": "skyler", "salt": "KFEXQBW0", "md5": "a06e0a17ffb7c424861cc02fd06983b9", "sha1": "ea20931ef7d744f804f5a1d25bdfde6f1695d9fc", "sha256": "903ca93074778257c70f09fde2f834e54c0895924da2d4dea92bf0fe4f8933f0"}, "dob": {"date": "1995-02-23T15:51:32.432Z", "age": 29}, "registered": {"date": "2011-05-30T09:40:08.957Z", "age": 13}, "phone": "037-85623112", "cell": "0959-847-5387", "id": {"name": "", "value": null}, "picture": {"large": "https://randomuser.me/api/portraits/women/88.jpg", "medium": "https://randomuser.me/api/portraits/med/women/88.jpg", "thumbnail": "https://randomuser.me/api/portraits/thumb/women/88.jpg"}, "nat": "IR"}]', datetime(2020, 3, 1, 0, 0, 0, 0, tzinfo=pytz.UTC).timestamp()),
