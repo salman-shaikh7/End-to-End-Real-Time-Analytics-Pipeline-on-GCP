@@ -15,7 +15,7 @@ import time
 
 #Function to fetch and publish message to pub/sub topic
 def fetch_and_publish_message():
-    duration = 5 * 60  
+    duration = 20 * 60  
     start_time = time.time()
 
     while (time.time() - start_time) < duration:
@@ -34,8 +34,6 @@ def fetch_and_publish_message():
         print(f"Published message ID: {future.result()}")
         time.sleep(0.5) # wait for half a second to make 2nd api call
 
-def test_py_funtion():
-    print("In python testing function")
 
 with DAG(
     "pubsub_dataflow_bigquery_workflow_dag",
@@ -48,24 +46,9 @@ with DAG(
                         task_id='Create_PubSub_Topic',
                         bash_command=
                         """
-                        TOPIC="my-topic"
-                        RESULT=$(\
-                        gcloud pubsub topics list \
-                        --filter="name.scope(topics)=${TOPIC}" \
-                        --format="value(name)" 2>/dev/null)
-
-                        if [ "${RESULT}" == "" ]
-                        then
-                            echo "Topic ${TOPIC} does not exist, creating..."
-                            gcloud pubsub topics create ${TOPIC}
-                            if [ $? -eq 0 ]
-                            then
-                                # Command succeeded, topic created
-                            else
-                                # Command did not succeed, topic was not created
-                            fi
-                        fi
-
+                            echo "Creating pub sub topic"
+                            gcloud pubsub topics create my_topic
+                            echo "pub sub topic created"
                         """
                         )
     
@@ -84,17 +67,15 @@ with DAG(
                         python_callable=fetch_and_publish_message
                         )
     
-
     TASK_4=BashOperator(
                         task_id='wait_for_pipeline_execution',
                         bash_command="""
-                        echo "waiting for 500 seconds"
-                        sleep 500
-                        echo "wait finished for 500 seconds"
+                        echo "waiting for 1300 seconds"
+                        sleep 1300
+                        echo "wait finished for 1300 seconds"
                         """
                         )
     
-
     TASK_5=BashOperator(
                         task_id='deploy_the_pipeline',
                         bash_command="""
@@ -122,7 +103,6 @@ with DAG(
                         echo "Pipeline Deployment Done"     
                         """
                         )   
-
     
     TASK_6=DataflowStopJobOperator(
                         task_id="stop_dataflow_job",
