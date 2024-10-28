@@ -20,12 +20,6 @@ class AddWindowEndFn(beam.DoFn):
     def process(self, element, window=beam.DoFn.WindowParam):
         yield (str(window.end.to_utc_datetime()), element)
 
-class GetTimestampFn(beam.DoFn):
-    def process(self, element, window=beam.DoFn.WindowParam):
-        window_start = window.start.to_utc_datetime().strftime("%Y-%m-%dT%H:%M:%S")
-        output = {'page_views': element, 'timestamp': window_start}
-        yield output
-
 class StatCalculatorFn(beam.DoFn):
     def process(self, group_with_key):
         group=group_with_key[1]
